@@ -17,12 +17,18 @@
     <!-- Link Css kelas 10 -->
 
     <link rel="stylesheet" type="text/css" href="kelas10.css" />
+
+    <!-- Link Animasi saat di scroll -->
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
   </head>
 
   <body>
     <!-- Password sebelum masuk ( mulai ) -->
 
-    <div id="passwordForm">
+    <div id="passwordForm" data-aos="fade-up" data-aos-duration="2000">
       <form id="password-Form" onsubmit="checkPassword(); return false;">
         <label for="password">Masukkan Kata Sandi : </label>
         <input type="password" id="password" required class="passwd" minlength="4"/>
@@ -267,5 +273,10 @@
     <!-- Link JS kelas 10 -->
 
     <script src="kelas10.js"></script>
+
+    <!-- AOS -->
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
