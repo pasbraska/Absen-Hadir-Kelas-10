@@ -13,6 +13,11 @@ form.addEventListener("submit", (e) => {
   const nameInput = document.getElementById("nama");
   const name = nameInput.value.trim();
 
+  if(!validateForm()){
+    return;
+  }
+
+
   const approvedNames = [
     "Chelsa",
     "Aviva",
@@ -93,6 +98,48 @@ form.addEventListener("submit", (e) => {
     })
     .catch((error) => console.error("Error!", error.message));
 });
+
+// Objek aturan validasi berdasarkan nama
+
+function validateForm() {
+  var rules = {
+    "Chelsa" : "X DPIB 1",
+    "Aviva":"X DPIB 1",
+    "Fachri":"X DPIB 2",
+    "Fely":"X DPIB 2",
+    "Renggi":"X DPIB 3",
+    "Nanda":"X DPIB 3",
+    "Tiara":"X DPIB 3",
+    "Nicholas":"X DPIB 3",
+    "Ikrar":"X TKR 1",
+    "Syahrul":"X TKR 1",
+    "Rangga":"X TKR 3",
+    "Felix":"X TBSM 1",
+    "Bagus":"X TBSM 1",
+    "Fauzan":"X TBSM 2",
+    "Gentar":"X TBSM 2",
+    "Bagas":"X TBSM 2",
+    "Bayu":"X TKJ 1",
+    "Nadhin":"X TKJ 2",
+    "Dika":"X TKJ 2",
+    "Nadia":"X TKJ 3",
+    "Bintari":"X TKJ 3",
+    "Azmi":"X DKV 1",
+    "Greta":"X DKV 2",
+    "Putri":"X DKV 3",
+    // Tambahkan aturan validasi lainnya sesuai kebutuhan
+  };
+  var nama = document.getElementById("nama").value;
+  var kelas = document.getElementById("kelas").value;
+
+  // Periksa aturan validasi berdasarkan nama
+  if (rules.hasOwnProperty(nama) && kelas !== rules[nama]) {
+    alert("Nama " + nama + " harus memilih kelas " + rules[nama] + ".");
+    return false; // Mencegah pengiriman formulir jika validasi gagal
+  } else {
+    return true; // Izinkan pengiriman formulir jika semua validasi berhasil
+  }
+}
 
 const btnReset = document.querySelector(".btn-reset");
 btnReset.style.backgroundColor = "red";
