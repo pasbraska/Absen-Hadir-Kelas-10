@@ -127,16 +127,17 @@ function validateForm() {
     "Azmi":"X DKV 1",
     "Greta":"X DKV 2",
     "Putri":"X DKV 3",
-    
+    // Tambahkan aturan validasi lainnya sesuai kebutuhan
   };
   var nama = document.getElementById("nama").value;
   var kelas = document.getElementById("kelas").value;
 
+  // Periksa aturan validasi berdasarkan nama
   if (rules.hasOwnProperty(nama) && kelas !== rules[nama]) {
     alert("Nama " + nama + " harus memilih kelas " + rules[nama] + ".");
-    return false;
+    return false; // Mencegah pengiriman formulir jika validasi gagal
   } else {
-    return true;
+    return true; // Izinkan pengiriman formulir jika semua validasi berhasil
   }
 }
 
