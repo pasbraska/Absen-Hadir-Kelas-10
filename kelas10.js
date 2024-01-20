@@ -14,9 +14,7 @@ form.addEventListener("submit", (e) => {
   const name = nameInput.value.trim();
 
   if (!validateForm()) {
-    return false;
-  } else {
-    return true;
+    return;
   }
 
   const approvedNames = [
