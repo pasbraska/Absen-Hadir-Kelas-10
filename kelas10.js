@@ -13,10 +13,11 @@ form.addEventListener("submit", (e) => {
   const nameInput = document.getElementById("nama");
   const name = nameInput.value.trim();
 
-  if(!validateForm()){
-    return;
+  if (!validateForm()) {
+    return false;
+  } else {
+    return true;
   }
-
 
   const approvedNames = [
     "Chelsa",
