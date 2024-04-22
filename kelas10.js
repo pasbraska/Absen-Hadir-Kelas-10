@@ -171,7 +171,7 @@ btnReset.style.backgroundColor = "red";
 function checkPassword() {
   var password = document.getElementById("password").value;
 
-  if (password === "4083") {
+  if (password === "4335") {
     document.getElementById("passwordForm").style.display = "none";
     document.querySelector(".main").style.display = "block";
   } else {
